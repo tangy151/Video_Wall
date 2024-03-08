@@ -8,9 +8,13 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-# 设置cmake模块的查询目录，注意这里的路径，到mingw路径即可
-set(CMAKE_PREFIX_PATH   "C:/Qt/5.15.2/msvc2019_64")
-set(QT_DIR              "C:/Qt/5.15.2/msvc2019_64")
+if (WIN32
+    set(CMAKE_PREFIX_PATH   "C:/Qt/5.15.2/msvc2019_64")
+    set(QT_DIR              "C:/Qt/5.15.2/msvc2019_64")
+elseif (UNIX)
+elseif (APPLE)
+endif()
+
 
 
 
@@ -137,10 +141,6 @@ install(DIRECTORY
         $<TARGET_FILE_DIR:${PROJECT_NAME}>
         DESTINATION
         ${INSTALL_PATH})
-
-
-
-
 
 
 
