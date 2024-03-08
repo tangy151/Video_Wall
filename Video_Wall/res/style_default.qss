@@ -1,0 +1,51 @@
+QListView{background-color:rgb(29,38,47);font-size:16px;color:rgb(230,230,230);}
+
+#QListView[type=gradient]::item:selected{background-color:#FF8000;}
+
+
+
+
+
+QLineEdit{background:#1C23A;color:white;selection-background-color:darkgray;padding-left:2px}
+
+
+ 
+#QTreeView{background-color: rgb(29,38,47);color:rgb(234,234,255);}
+ 
+ QTreeView 
+ {
+        border: 0px solid rgb(50, 50, 50);
+		outline: 0px;
+        background-color: rgb(29,38,47);
+        font-size: 16px;		 
+		color:rgb(234,234,234);
+}
+ 
+ 
+QTreeView::item:hover, QTreeView::branch:hover { /** 鼠标滑过 **/
+        background-color: rgba(255, 255, 255, 22);
+}
+QTreeView::item:selected, QTreeView::branch:selected { /** 鼠标选中 **/
+	color:rgb(85, 229, 197);
+        background-color:rgb(22,29,36);
+	
+}
+
+
+QTreeView::item:selected:!active, QTreeView::branch:selected:!active { /** 鼠标选中 **/
+	color:color:rgb(234,234,255);
+        background-color:rgb(29,38,47);
+	
+}
+
+
+QTreeView::branch {
+        background-color: transparent;
+}
+ 
+
+ 
+QTableView{selection-background-color:#1A3D5A;background-color:#13181D;color:white;}
+
+
+ 

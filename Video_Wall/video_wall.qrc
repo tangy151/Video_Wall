@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">	 
+	 <file>res/logo.png</file>
+	 <file>res/newFont.ttf</file>
+	 <file>res/style_default.qss</file>
+    </qresource>
+</RCC>
