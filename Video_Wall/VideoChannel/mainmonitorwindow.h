@@ -1,5 +1,5 @@
 #ifndef			_MAIN_MONITOR_WINDOW_H_
-#define		_MAIN_MONITOR_WINDOW_H_
+#define		    _MAIN_MONITOR_WINDOW_H_
 
  
 #include <memory>

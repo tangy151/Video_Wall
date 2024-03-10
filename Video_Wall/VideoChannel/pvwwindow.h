@@ -1,5 +1,5 @@
 #ifndef		_PVW_WINDOW_H_
-#define	_PVW_WINDOW_H_
+#define	    _PVW_WINDOW_H_
 
 
 #include <QWidget>

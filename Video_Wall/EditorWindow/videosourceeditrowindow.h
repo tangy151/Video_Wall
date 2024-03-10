@@ -1,7 +1,7 @@
 #ifndef			_VIDEO_SOURCE_EDITOR_WINDOW_H_
-#define		_VIDEO_SOURCE_EDITOR_WINDOW_H_
+#define		    _VIDEO_SOURCE_EDITOR_WINDOW_H_
 
-
+#include <memory>
 #include <QDialog>
  #include "../globaldefine.h"
 

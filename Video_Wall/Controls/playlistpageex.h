@@ -65,9 +65,9 @@ signals:
 
 private:
 
-	bool								m_bActive = true;
+	bool					   m_bActive = true;
 	QString						m_strPageTitle;
-	PlayListWidgetEx*		m_pRibbon = 0x0;
+	///PlayListWidgetEx*		    m_pRibbon;
 
 	std::unique_ptr<PlayListEx>	m_ptrPlayListEx;
 

@@ -1,5 +1,5 @@
 #ifndef			_PLAY_CONTROL_WINDOW_H_
-#define		_PLAY_CONTROL_WINDOW_H_
+#define		    _PLAY_CONTROL_WINDOW_H_
 
 #include <memory>
 #include <QWidget>

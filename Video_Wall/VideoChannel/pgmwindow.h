@@ -1,5 +1,5 @@
 #ifndef		_PGM_WINDOW_H_
-#define _PGM_WINDOW_H_
+#define     _PGM_WINDOW_H_
 
  
 

@@ -1,9 +1,9 @@
 #ifndef		_VOLUME_CONTROL_WINDOW_H_
-#define	_VOLUME_CONTROL_WINDOW_H_
+#define	    _VOLUME_CONTROL_WINDOW_H_
 
 
 #include <QWidget>
-#include <memory.h>
+#include <memory>
  
 class ButtonEx;
 class SliderEx;
@@ -50,7 +50,7 @@ protected:
 	std::unique_ptr<ButtonEx>			m_ptrBtnStop;
 	std::unique_ptr<ButtonEx>			m_ptrBtnSpeaker;
 
-	std::unique_ptr<SliderEx>			m_ptrVSliderEx;		//´¹Ö±
+	std::unique_ptr<SliderEx>			m_ptrVSliderEx;		//ï¿½ï¿½Ö±
 
 
  	QList<ButtonEx*>		m_listButtons;

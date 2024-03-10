@@ -5,7 +5,7 @@
 #include <QPushButton>
 #include <QTabWidget>
 #include <QWidget>
-
+#include <memory>
 #include <vector>
 #include <QTabWidget>
 

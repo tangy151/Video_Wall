@@ -1,5 +1,5 @@
 #ifndef			_MONITOR_MANAGER_WINDOW_H_
-#define		_MONITOR_MANAGER_WINDOW_H_
+#define		    _MONITOR_MANAGER_WINDOW_H_
 
 
 #include <QWidget>
@@ -128,7 +128,10 @@ private:
 	QColor				m_iCheckTextColor;
 	 
 	QString					m_strExePath;
+
+#if WIN32
 	ComputerInfo		m_iComputerInfo;
+#endif
 	QTimer*				m_pServerRunState;	//定时器获取内存信息
  };
 

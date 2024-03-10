@@ -1,5 +1,5 @@
 #ifndef			_GRAPHICS_SCENE_EX_H_
-#define		_GRAPHICS_SCENE_EX_H_
+#define		    _GRAPHICS_SCENE_EX_H_
 
 
 #include <QGraphicsScene>

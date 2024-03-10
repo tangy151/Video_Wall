@@ -1,6 +1,7 @@
 #ifndef		_SELECT_MEDIA_SOURCE_WINDOW_H_
-#define	_SELECT_MEDIA_SOURCE_WINDOW_H_
+#define	    _SELECT_MEDIA_SOURCE_WINDOW_H_
 
+#include <memory>
 #include <QDialog>
 #include <QLineEdit>
 #include "../globaldefine.h"

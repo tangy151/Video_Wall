@@ -1,6 +1,7 @@
 #ifndef			_SYSTEM_TIME_INFO_H_
-#define		_SYSTEM_TIME_INFO_H_
+#define		    _SYSTEM_TIME_INFO_H_
 
+#if  WIN32
 #include <atltime.h>
 
 class SystemTimeInfo 
@@ -58,5 +59,6 @@ private:
 
 };
 
+#endif
 
 #endif//_SYSTEM_TIME_INFO_H_

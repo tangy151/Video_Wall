@@ -69,19 +69,23 @@ MonitorAreaUtilWindow::~MonitorAreaUtilWindow()
 
 void MonitorAreaUtilWindow::InitSystemInfo()
 {
+#if WIN32
 	m_pServerRunState = new QTimer(this);
 	connect(m_pServerRunState, SIGNAL(timeout()), this, SLOT(OnGetServerRunState()));
 	OnStart(1000);
+#endif
 }
 
 void MonitorAreaUtilWindow::OnGetServerRunState()
 {
+#if WIN32
 	m_iComputerInfo.GetComputerInfo();
 
 	QString  strText = GetRunTimeString();
 
 	if (m_ptrLabelLogo)
 		m_ptrLabelLogo->setText(strText);
+#endif
 }
 
 void MonitorAreaUtilWindow::OnStart(int interval)
@@ -300,7 +304,7 @@ void MonitorAreaUtilWindow::InitButtons2()
 void MonitorAreaUtilWindow::InitLabels()
 {
 	QString strIcon = "";
-	strIcon = m_strExePath + "/Images/screen.png";
+	strIcon =  QString(":/res/screen.png");
 
 	m_ptrButtonScreen.reset(new ButtonEx(this));
 	m_ptrButtonScreen->setPaddingLeft(0);
@@ -309,8 +313,8 @@ void MonitorAreaUtilWindow::InitLabels()
 	m_ptrButtonScreen->setShowIcon(true);
 	m_ptrButtonScreen->setIconSpace(5);
 	m_ptrButtonScreen->setIconSize(QSize(30, 30));
-	m_ptrButtonScreen->setNormalBgColor(RGB(30, 30, 30));
-	m_ptrButtonScreen->setNormalFrameColor(RGB(50, 50, 50));
+	m_ptrButtonScreen->setNormalBgColor(QColor(30, 30, 30));
+	m_ptrButtonScreen->setNormalFrameColor(QColor(50, 50, 50));
 	m_ptrButtonScreen->setIconNormal(QPixmap(strIcon));
 	m_ptrButtonScreen->setIconHover(QPixmap(strIcon));
 	m_ptrButtonScreen->setIconCheck(QPixmap(strIcon));
@@ -318,8 +322,8 @@ void MonitorAreaUtilWindow::InitLabels()
 	//---------------------------------------------
 	m_ptrLabelLogo.reset(new NavLabelEx(this));
 
-	QColor normalBgColor = QColor(RGB(30, 30, 30));
-	QColor normalTextColor = QColor(RGB(239, 98, 234));
+	QColor normalBgColor = QColor(QColor(30, 30, 30));
+	QColor normalTextColor = QColor(QColor(239, 98, 234));
 
 #if	PIX_1080p
 
@@ -346,7 +350,7 @@ void MonitorAreaUtilWindow::InitLabels()
 	m_ptrLabelLogo->setText(QString::fromLocal8Bit("00:00:00"));
 #endif
 	 
-	strIcon = m_strExePath + "/Images/logo.png";
+	strIcon =    QString( ":/res/logo.png");
 
 	QPixmap iconNormal = QPixmap(strIcon);
 
@@ -365,21 +369,22 @@ void MonitorAreaUtilWindow::InitLabels()
 	m_ptrLabelOutPut->setIconSize(QSize(65, 80));
 	m_ptrLabelOutPut->setText(QString::fromLocal8Bit("屏幕2"));
 
-	m_ptrLabelOutPut->setNormalBgColor(RGB(30, 30, 30));
-	m_ptrLabelOutPut->setNormalTextColor(RGB(235, 235, 235));
+	m_ptrLabelOutPut->setNormalBgColor(QColor(30, 30, 30));
+	m_ptrLabelOutPut->setNormalTextColor(QColor(235, 235, 235));
 }
+
 void MonitorAreaUtilWindow::InitSliders()
 {
 	m_ptrHSliderEx.reset(new SliderEx(this));
 	m_ptrHSliderEx->setStyle(Single_HorizontalSlider, RectangleEx);
 	m_ptrHSliderEx->setRange(1, 10);
 	m_ptrHSliderEx->setSingleStep(1);
-	m_ptrHSliderEx->setSliderColor(RGB(40, 40, 40), RGB(40, 40, 40));		//设置槽底色,选中色
-	m_ptrHSliderEx->setHandleColor(RGB(50, 50, 50), RGB(50, 50, 50));	//设置滑块选中色,未选中色
+	m_ptrHSliderEx->setSliderColor(QColor(40, 40, 40), QColor(40, 40, 40));		//设置槽底色,选中色
+	m_ptrHSliderEx->setHandleColor(QColor(50, 50, 50), QColor(50, 50, 50));	//设置滑块选中色,未选中色
 	m_ptrHSliderEx->setDrawVolume(true);
 
 #if PIX_1080p
-	QString	 strHIcon = m_strExePath + "/Images/sliderbar.png";
+	QString	 strHIcon =  QString(":/res/sliderbar.png");
 	QPixmap iconNormal = QPixmap(strHIcon);
 #else
 	QString	 strHIcon = m_strExePath + "/Images/sliderbar2.png";
@@ -393,10 +398,10 @@ void MonitorAreaUtilWindow::InitSliders()
 	m_ptrVSliderEx->setRange(0, 10);
 	m_ptrVSliderEx->setSingleStep(1);
 	m_ptrVSliderEx->setSliderColor(QColor(40, 40, 40), QColor(40, 40, 40));		//设置槽底色,选中色
-	m_ptrVSliderEx->setHandleColor(QColor(50, 50, 50), QColor(50, 50, 50));	//设置滑块选中色,未选中色
+	m_ptrVSliderEx->setHandleColor(QColor(50, 50, 50), QColor(50, 50, 50));	    //设置滑块选中色,未选中色
 	m_ptrVSliderEx->setDrawVolume(true);
 	 
-	QString	 strVIcon = m_strExePath + "/Images/sliderbar.png";
+	QString	 strVIcon =  QString( ":/res/sliderbar.png");
 	iconNormal = QPixmap(strVIcon);
 	 
 	m_ptrVSliderEx->setIconNormal(iconNormal);
@@ -827,10 +832,11 @@ QString MonitorAreaUtilWindow::GetRunTimeString()
 	memset(szBuffer, 0, 1024);
 
 	std::string  strWeekDay = "";
-	 
 
+#if WIN32
 	sprintf(szBuffer, "% 02d:%02d:%02d", m_iComputerInfo.m_iCurSystemTime.GetHour(),
 		m_iComputerInfo.m_iCurSystemTime.GetMinute(), m_iComputerInfo.m_iCurSystemTime.GetSecond());
+#endif
 
 	std::string strSystem = szBuffer;
 	QString  strText = QString(QString::fromLocal8Bit(strSystem.c_str()));

@@ -1,7 +1,8 @@
 #ifndef			_PLAYER_LIST_WINDOW_H_
-#define		_PLAYER_LIST_WINDOW_H_
+#define		    _PLAYER_LIST_WINDOW_H_
  
 #include <QWidget>
+#include <memory>
 
 class ButtonEx;
 class PlayListWidgetEx;

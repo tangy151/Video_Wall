@@ -1,7 +1,7 @@
 #ifndef		_PLAY_LIST_EDITOR_WINDOW_H_
-#define	 _PLAY_LIST_EDITOR_WINDOW_H_
+#define	    _PLAY_LIST_EDITOR_WINDOW_H_
 
- 
+#include <memory>
 #include <QDialog>
 #include "../globaldefine.h"
 

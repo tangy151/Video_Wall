@@ -3,7 +3,7 @@
 
 
 #include <QWidget>
-
+#include <memory>
  
 class PlayListEx;
 class QListWidget;

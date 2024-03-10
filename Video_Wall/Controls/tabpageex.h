@@ -16,12 +16,12 @@ class TabSectionEx;
 class QListWidget;
 class MediaSelectListEx;
 class MediaSelectListItemEx;
- 
+  class TabWidgetEx;
 class TabPageEx : public QWidget
 {
 	Q_OBJECT
 
-		friend class TabWidgetEx;
+	//	friend class TabWidgetEx;
 public:
 	TabPageEx(QWidget *parent,const QString& pageTitle, MEDIA_SELECT_TYPE iMediaType);
 	~TabPageEx();
@@ -72,8 +72,8 @@ public slots:
 private:
 
 	bool						m_bActive = true;
-	QString				m_strPageTitle;
-	TabWidgetEx*		m_pRibbon = 0x0;
+	QString				    m_strPageTitle;
+	TabWidgetEx*		    m_pRibbon ;
 
 	MEDIA_SELECT_TYPE		m_iMediaType;
 

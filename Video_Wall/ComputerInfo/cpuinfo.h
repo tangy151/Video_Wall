@@ -1,6 +1,8 @@
 #ifndef			_CPU_INFO_H_
 #define		_CPU_INFO_H_
 
+#if  WIN32
+
 #include <Windows.h>
 #include <math.h>
 
@@ -76,6 +78,7 @@ private:
 };
 
 
+#endif
 
 #endif//_CPU_INFO_H_
 

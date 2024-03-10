@@ -3,7 +3,7 @@
 
 #include <QAction>
 #include <QToolButton>
-
+#include <memory>
 
 class RibbonButton 
 	: public QToolButton

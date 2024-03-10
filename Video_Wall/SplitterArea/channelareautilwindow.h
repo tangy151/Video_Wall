@@ -1,12 +1,13 @@
 #ifndef		_CHANNEL_AREA_UTIL_WINDOW_H_
-#define	 _CHANNEL_AREA_UTIL_WINDOW_H_
+#define	    _CHANNEL_AREA_UTIL_WINDOW_H_
  
 #include <memory>
 #include <QWidget>
-
 #include <vector>
  
 #include "../Public/selectmediasourcewindow.h"
+
+
 class ChannelWindow;
 class QGridLayout;
 

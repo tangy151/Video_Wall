@@ -1,7 +1,7 @@
 #include "ribbonpage.h"
 #include "ribbonsection.h"
 #include <QFrame>
-
+#include "ribbon.h"
 
 RibbonPage::RibbonPage(const QString& pageTitle) 
 	: QWidget()

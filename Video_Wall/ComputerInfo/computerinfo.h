@@ -1,5 +1,8 @@
-#ifndef			_COMPUTER_INFO_H_
+#ifndef	    _COMPUTER_INFO_H_
 #define		_COMPUTER_INFO_H_
+
+
+#if  WIN32
 
 #include <string>
 #include <stdlib.h>
@@ -32,6 +35,6 @@ public:
 	SystemTimeInfo	m_iCurSystemTime;
  
 };
-
+#endif
 
 #endif//_COMPUTER_INFO_H_

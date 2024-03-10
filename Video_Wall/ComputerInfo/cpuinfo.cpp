@@ -1,7 +1,7 @@
 #include "cpuinfo.h"
 
- 
 
+#if  WIN32
 CPUInfo::CPUInfo()
 	: m_iCPUInfo(-1)
 	, m_dbIdleTime(0.0)
@@ -88,3 +88,5 @@ void CPUInfo::SetCpuInfo()
 {
 	m_iCPUInfo = 0;
 }
+
+#endif

@@ -5,17 +5,17 @@
 #include <QBoxLayout>
 #include <QIcon>
 #include <QWidget>
-
+#include <memory>
 #include <vector>
 
 class RibbonSection;
-
+  class Ribbon;
 class RibbonPage
 	: public QWidget
 {
 	Q_OBJECT;
 
-	friend class Ribbon;
+//	friend class Ribbon;
 
 public:
 	RibbonPage(const QString& pageTitle);
@@ -55,7 +55,7 @@ private:
 
 	QString m_strPageTitle;
 
-	Ribbon* m_pRibbon = 0x0;
+	Ribbon* m_pRibbon  ;
 
 	QColor m_iPageTabColor;
 

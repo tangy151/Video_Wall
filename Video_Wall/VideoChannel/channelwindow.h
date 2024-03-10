@@ -1,5 +1,5 @@
 #ifndef		_CHANNEL_WINDOW_H_
-#define _CHANNEL_WINDOW_H_
+#define     _CHANNEL_WINDOW_H_
 
  
 #include <memory>

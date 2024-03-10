@@ -1,5 +1,5 @@
 #ifndef			_PLAY_LIST_EX_H_
-#define		_PLAY_LIST_EX_H_
+#define		    _PLAY_LIST_EX_H_
  
 #include <QListWidget>
 #include <QListWidget>
@@ -49,7 +49,7 @@ protected:
 
 private:
 
-	QList<PlayListItemEx *>		m_listItems;	 //所有的数据
+	QList<PlayListItemEx *>		    m_listItems;	 //所有的数据
 	PlayListItemEx *					m_pRightClickItem;
 
 };

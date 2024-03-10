@@ -1,4 +1,7 @@
+
 #include "memoryinfo.h"
+
+#if  WIN32
 #include <Windows.h>
 
 MemoryInfo::MemoryInfo( )
@@ -30,3 +33,4 @@ void MemoryInfo::SetMemory()
 {
 	m_iUsage = 0;
 }
+#endif

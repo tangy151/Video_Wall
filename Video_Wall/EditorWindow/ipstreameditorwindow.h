@@ -1,8 +1,9 @@
 #ifndef			_IPSTREAM_EDITOR_WINDOW_H_
-#define		_IPSTREAM_EDITOR_WINDOW_H_
+#define		    _IPSTREAM_EDITOR_WINDOW_H_
 
 #include <QDialog>
 #include "../globaldefine.h"
+#include <memory>
 
 class ButtonEx;
 class NavLabelEx;

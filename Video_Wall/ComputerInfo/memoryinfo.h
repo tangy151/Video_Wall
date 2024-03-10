@@ -1,6 +1,7 @@
 #ifndef			_MEMORY_INFO_H_
 #define		_MEMORY_INFO_H_
- 
+
+#if  WIN32
 class MemoryInfo 
 {
  public:
@@ -19,5 +20,7 @@ private:
 
 
 };
+
+#endif
 
 #endif//_MEMORY_INFO_H_

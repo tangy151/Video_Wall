@@ -5,7 +5,7 @@
 #include <QBoxLayout>
 #include <QLabel>
 #include <QWidget>
-
+#include <memory>
 
 class RibbonSection
 	: public QWidget

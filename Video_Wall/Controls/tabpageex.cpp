@@ -12,7 +12,7 @@ TabPageEx::TabPageEx(QWidget *parent, const QString& pageTitle, MEDIA_SELECT_TYP
 	, m_strPageTitle(pageTitle) 
  	, m_iMediaType(iMediaType)
 {
-	m_pRibbon = (TabWidgetEx*)this->parentWidget();
+    m_pRibbon =static_cast<TabWidgetEx*>( this->parentWidget());
 
  	InitUI();
 	InitConnects();

@@ -1,11 +1,10 @@
 #ifndef		_GRAPHICS_VIEW_EX_H_
-#define	_GRAPHICS_VIEW_EX_H_
-
+#define	    _GRAPHICS_VIEW_EX_H_
 
 #include <QGraphicsView>
+#include <memory>
 
 class QMouseEvent;
-
 class ScrollBarEx;
 
 class GraphicsViewEx 

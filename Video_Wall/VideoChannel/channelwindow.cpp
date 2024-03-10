@@ -32,7 +32,12 @@ void ChannelWindow::SetChannelIndex(int iChannelIndex)
 	char szBuffer[20];
 	memset(szBuffer, 0, 20);
 
+#if  WIN32
 	sprintf_s(szBuffer, "%d", iChannelIndex);
+#else
+    sprintf(szBuffer, "%d", iChannelIndex);
+#endif
+
 
 	QString strTitle = szBuffer;
 

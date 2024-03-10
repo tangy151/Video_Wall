@@ -3,6 +3,7 @@
  
 #include <QDialog>
 #include <QLineEdit>
+#include <memory>
 
 class ButtonEx;
 class LabelEx;

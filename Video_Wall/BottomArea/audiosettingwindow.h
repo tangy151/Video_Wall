@@ -4,6 +4,7 @@
 #include <memory>
 #include <QWidget>
 #include <vector>
+
 using namespace std;
 
 class ButtonEx;

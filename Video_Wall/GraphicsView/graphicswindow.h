@@ -3,7 +3,7 @@
 
 
 #include <QGraphicsObject>
-
+#include <memory>
 class GraphicsWindow
 	: public QGraphicsObject
 {

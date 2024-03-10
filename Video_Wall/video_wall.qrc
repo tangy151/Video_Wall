@@ -1,7 +1,15 @@
 <RCC>
-    <qresource prefix="/">	 
-	 <file>res/logo.png</file>
-	 <file>res/newFont.ttf</file>
+    <qresource prefix="/">
+
 	 <file>res/style_default.qss</file>
+	 <file>res/logo.png</file>
+	 <file>res/screen.png</file>
+	 <file>res/sliderbar.png</file>
+	 <file>res/sliderbar2.png</file>
+	 
+	 <file>res/SourceHanSansCN-Bold.ttf</file>
+	 <file>res/SourceHanSansCN-Regular.ttf</file>
+	 
+	 
     </qresource>
 </RCC>

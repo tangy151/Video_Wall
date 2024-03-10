@@ -1,7 +1,7 @@
 #include "computerinfo.h"
 
 
-
+#if  WIN32
 
 ComputerInfo::ComputerInfo( )
  {
@@ -29,6 +29,6 @@ void ComputerInfo::GetComputerInfo()
 	m_iCurSystemTime.UpDateSystemTime();
 }
 
-
+#endif
 
 

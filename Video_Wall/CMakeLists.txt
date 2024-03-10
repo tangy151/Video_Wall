@@ -1,22 +1,31 @@
-cmake_minimum_required(VERSION 3.18)#cmake最低版本
+cmake_minimum_required(VERSION 3.16)#cmake最低版本
 #project(Clion_VS_QT)
 project(TV_Wall)
 
 
-set(CMAKE_CXX_STANDARD 11)#C++标准
+if (WIN32)
+    set(CMAKE_CXX_STANDARD 11)#C++标准
+else()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -std=c++11")
+endif()
+
+
+#set( CMAKE_C_FLAGS    "${CMAKE_C_FLAGS}   /MP" )
+#set( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} /MP" )
+
+
+
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-if (WIN32
+if (WIN32)
+    #Qt当前的安装目录
     set(CMAKE_PREFIX_PATH   "C:/Qt/5.15.2/msvc2019_64")
     set(QT_DIR              "C:/Qt/5.15.2/msvc2019_64")
 elseif (UNIX)
 elseif (APPLE)
 endif()
-
-
-
 
 message("CMAKE_GENERATOR_PLATFORM = ${CMAKE_GENERATOR_PLATFORM}")
 message("CMAKE_VS_PLATFORM_NAME = ${CMAKE_VS_PLATFORM_NAME}")
@@ -26,7 +35,12 @@ message("CMAKE_VS_PLATFORM_NAME = ${CMAKE_VS_PLATFORM_NAME}")
 
 file(GLOB HEAD_MAIN1        ${CMAKE_CURRENT_LIST_DIR}/*.h)
 file(GLOB HEAD_MAIN2        ${CMAKE_CURRENT_LIST_DIR}/BottomArea/*.h)
-file(GLOB HEAD_MAIN3        ${CMAKE_CURRENT_LIST_DIR}/ComputerInfo/*.h)
+
+if (WIN32)
+    file(GLOB HEAD_MAIN3        ${CMAKE_CURRENT_LIST_DIR}/ComputerInfo/*.h)
+endif()
+
+
 file(GLOB HEAD_MAIN4        ${CMAKE_CURRENT_LIST_DIR}/Controls/*.h)
 file(GLOB HEAD_MAIN5        ${CMAKE_CURRENT_LIST_DIR}/Controls/Ribbon/*.h)
 file(GLOB HEAD_MAIN6        ${CMAKE_CURRENT_LIST_DIR}/EditorWindow/*.h)
@@ -38,7 +52,14 @@ file(GLOB HEAD_MAIN10       ${CMAKE_CURRENT_LIST_DIR}/VideoChannel/*.h)
 
 file(GLOB SOURCE1       ${CMAKE_CURRENT_LIST_DIR}/*.cpp)
 file(GLOB SOURCE2       ${CMAKE_CURRENT_LIST_DIR}/BottomArea/*.cpp)
-file(GLOB SOURCE3       ${CMAKE_CURRENT_LIST_DIR}/ComputerInfo/*.cpp)
+
+if (WIN32)
+    file(GLOB SOURCE3       ${CMAKE_CURRENT_LIST_DIR}/ComputerInfo/*.cpp)
+endif()
+
+
+
+
 file(GLOB SOURCE4       ${CMAKE_CURRENT_LIST_DIR}/Controls/*.cpp)
 file(GLOB SOURCE5       ${CMAKE_CURRENT_LIST_DIR}/Controls/Ribbon/*.cpp)
 file(GLOB SOURCE6       ${CMAKE_CURRENT_LIST_DIR}/EditorWindow/*.cpp)
@@ -56,6 +77,8 @@ include_directories(
         ${PROJECT_SOURCE_DIR}/../include
         ${PROJECT_SOURCE_DIR}/.)
 
+#链接库需要包含的目录
+link_directories(../libs)
 
 # 查找QT的模块
 find_package(Qt5 COMPONENTS
@@ -65,7 +88,9 @@ find_package(Qt5 COMPONENTS
         REQUIRED)
 
 
-link_directories(../libs)
+
+
+
 # 添加源文件
 add_executable(${PROJECT_NAME}
         ${HEAD_MAIN1}

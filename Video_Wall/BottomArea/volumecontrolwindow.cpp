@@ -56,7 +56,7 @@ void VolumeControlWindow::InitSlider()
 	m_ptrVSliderEx->setHandleColor(QColor(50, 50, 50), QColor(50, 50, 50));		//设置滑块选中色,未选中色
 	m_ptrVSliderEx->setDrawVolume(true);
 	 
-	QString	 strIcon = m_strExePath + "/Images/sliderbar.png";
+	QString	 strIcon = QString(":/res/sliderbar.png");
  
  	QPixmap iconNormal = QPixmap(strIcon);
  	m_ptrVSliderEx->setIconNormal(iconNormal);
@@ -118,7 +118,7 @@ void VolumeControlWindow::InitButtons()
 
 	//-------------------------------------------------------------------
 	QString strIcon = "";
-	strIcon = m_strExePath + "/Images/skpear.png";
+	strIcon =  QString(":/res/skpear.png");
 	
 	m_ptrBtnSpeaker.reset(new ButtonEx(this));
 	m_ptrBtnSpeaker->setPaddingLeft(0);
@@ -217,13 +217,24 @@ void VolumeControlWindow::resizeEvent(QResizeEvent* pEvent)
 #endif
  		{
 			strText = QString::fromLocal8Bit("输出");
- 			sprintf_s(szBuffer, "%s", strText.toStdString().c_str());
+
+#if  WIN32
+            sprintf_s(szBuffer, "%s", strText.toStdString().c_str());
+#else
+            sprintf(szBuffer, "%s", strText.toStdString().c_str());
+#endif
 		}
 		else
 		{
 			strTemp = QString::fromLocal8Bit("_通道");
 
+#if  WIN32
 			sprintf_s(szBuffer, "%02d", m_iChannelIndex);
+#else
+            sprintf(szBuffer, "%02d", m_iChannelIndex);
+#endif
+
+
 			strText = szBuffer;
 			strText += strTemp;
 		}

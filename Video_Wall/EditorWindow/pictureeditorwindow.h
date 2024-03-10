@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include "../globaldefine.h"
+#include <memory>
+
 
 class ButtonEx;
 class NavLabelEx;

@@ -2,7 +2,7 @@
 #define		_VIDEO_AREA_UTIL_WINDOW_H_
   
 #include <QWidget>
-
+#include <memory>
 #include "../globaldefine.h"
 
 class QPushButton;
