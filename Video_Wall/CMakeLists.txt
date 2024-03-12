@@ -8,12 +8,7 @@ if (WIN32)
 else()
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -std=c++11")
 endif()
-
-
-#set( CMAKE_C_FLAGS    "${CMAKE_C_FLAGS}   /MP" )
-#set( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} /MP" )
-
-
+  
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -140,7 +135,7 @@ message("CMAKE_SOURCE_DIR           = ${CMAKE_SOURCE_DIR}")
 #message("CMAKE_CURRENT_LIST_DIR     = ${CMAKE_CURRENT_LIST_DIR}")
 
 
-set(INSTALL_PATH  ${CMAKE_SOURCE_DIR}/install/${CMAKE_VS_PLATFORM_NAME})
+set(INSTALL_PATH  ${CMAKE_SOURCE_DIR}/install_dir/${CMAKE_VS_PLATFORM_NAME})
 
 
 #设置Debug和Release输出路径一致（windows）CMAKE_SOURCE_DIR
